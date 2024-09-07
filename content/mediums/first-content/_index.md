@@ -1,7 +1,7 @@
 +++
 title = 'Configure with Cloudshell'
 date = 2024-09-07T19:01:58+07:00
-draft = true
+draft = false
 weight = 1
 +++
 

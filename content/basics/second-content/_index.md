@@ -1,7 +1,7 @@
 +++
 title = 'Create S3 bucket'
 date = 2024-09-07T19:02:03+07:00
-draft = true
+draft = false
 weight = 2
 +++
 
