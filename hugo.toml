@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://longnnt.github.io/hugo-ws1/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-learn'
