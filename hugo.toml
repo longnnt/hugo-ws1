@@ -1,4 +1,4 @@
-baseURL = 'https://longnnt.github.io/hugo-ws1/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-learn'
@@ -29,7 +29,7 @@ theme = 'hugo-theme-learn'
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = false
   # Hide breadcrumbs in the header and only show the current page title
-  disableBreadcrumb = true
+  disableBreadcrumb = false
   # If set to true, prevents Hugo from including the mermaid module if not needed (will reduce load times and traffic)
   disableMermaid = true
   # Specifies the remote location of the mermaid js
@@ -44,8 +44,6 @@ theme = 'hugo-theme-learn'
   custom_css = ["css/foo.css", "css/bar.css"]
   # Change the title separator. Default to "::".
   titleSeparator = "-"
-  # landing page url
-  landingPageURL = 'https://longnnt.github.io/hugo-ws1/'
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

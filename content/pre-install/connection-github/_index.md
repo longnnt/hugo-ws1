@@ -1,6 +1,8 @@
 +++
 title = 'Create connection to github'
 date = 2024-09-07T20:59:39+07:00
+url = '/pre-install/connect-github'
+
 +++
 #### Create connection to github using console:
 - Go to Codepipeline service from homepage

@@ -1,7 +1,8 @@
 +++
-title = 'Configure with Cloudshell'
+title = 'Cloud shell'
 date = 2024-09-07T19:01:58+07:00
 weight = 1
+url = '/pre-install/cloudshell'
 +++
 
 #### Create access key in IAM Console:

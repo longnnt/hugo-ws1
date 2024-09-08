@@ -2,11 +2,15 @@
 title = 'Create S3 bucket'
 date = 2024-09-07T19:02:03+07:00
 weight = 2
+url = '/pre-install/create-s3'
+
 +++
 
 #### Create s3 bucket using cli:
 
-```aws s3api create-bucket --bucket codepipeline-ap-southeast-1-nntl-example --create-bucket-configuration LocationConstraint=ap-southeast-1```
+```bash
+aws s3api create-bucket --bucket codepipeline-ap-southeast-1-nntl-example --create-bucket-configuration LocationConstraint=ap-southeast-1
+```
 
 Specifying:
 
