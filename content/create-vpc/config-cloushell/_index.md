@@ -4,11 +4,10 @@ date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 1
 url = '/create-vpc/config-cloushell'
+pre = "<b>2.1. </b>"
 +++
 
-## Create config file for vpc using cli:
-
-### 2.1. Create file config for vpc
+### 1. Create file config for vpc
 
 ```bash
 vi vpc-conf.yaml
@@ -26,9 +25,9 @@ TagSpecifications:
 
 If you use more property or understand information, please use a reference document. [Cli VPC Document!](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html)
 
-### 2.2. Create file config for public subnet
+### 2. Create file config for public subnet
 
-#### 2.2.1. Find AzId in region
+#### 2.1. Find AzId in region
 
 ```bash
 aws ec2 describe-availability-zones
@@ -78,7 +77,7 @@ aws ec2 describe-availability-zones
 }
 ```
 
-#### 2.2.2. Create subnet public config
+#### 2.2. Create subnet public config
 
 ```bash
 vi public-subnet-conf.yaml

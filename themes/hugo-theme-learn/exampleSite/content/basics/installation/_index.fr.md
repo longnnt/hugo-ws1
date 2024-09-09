@@ -77,7 +77,7 @@ Lancez la commande suivante :
 hugo serve
 ```
 
-Se rendre sur `http://localhost:1313`
+Se rendre sur ``
 
 Vous devriez voir trois choses:
 

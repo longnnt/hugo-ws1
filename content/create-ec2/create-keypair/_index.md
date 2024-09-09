@@ -6,7 +6,7 @@ weight = 2
 pre = "<b>3.2. </b>"
 +++
 
-### 3.2.1. Create keypair using for Ec2:
+### Create keypair using for Ec2:
 
 
 ```console
