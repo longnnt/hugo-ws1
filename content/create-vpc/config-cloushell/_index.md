@@ -25,6 +25,7 @@ TagSpecifications:
 
 If you use more property or understand information, please use a reference document. [Cli VPC Document!](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html)
 
+---
 ### 2. Create file config for public subnet
 
 #### 2.1. Find AzId in region
@@ -76,7 +77,6 @@ aws ec2 describe-availability-zones
     ]
 }
 ```
-
 #### 2.2. Create subnet public config
 
 ```bash
@@ -96,6 +96,7 @@ CidrBlock: "10.10.0.1/16"
 
 If you use more property or understand information, please use a reference document. [Cli create subnet!](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-subnet.html)
 
+---
 ### 3. Create vpc bash
 
 ```bash

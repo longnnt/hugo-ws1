@@ -3,6 +3,7 @@ title = 'AWS CodePipeline'
 date = 2024-09-09T23:47:14+07:00
 pre = "<b>4. </b>"
 draft = false
+weight = 11
 +++
 ## AWS CodeBuild
 

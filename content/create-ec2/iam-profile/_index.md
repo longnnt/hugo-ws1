@@ -6,7 +6,7 @@ weight = 1
 pre = "<b>3.1. </b>"
 +++
 
-### 3.1.1. Create ec2 policy:
+### 1. Create ec2 policy:
 
 ```bash
 vi ec2-policy.json
@@ -34,12 +34,12 @@ aws iam create-policy --policy-name Ec2Policy --policy-document file://ec2-polic
 ![alt text](image.png)
 
 {{% notice note %}}
-Use arn value for [section 3.1.3](#313-attach-role-policy-and-add-role-to-instance-profile)
+Use arn value for [section 3](#313-attach-role-policy-and-add-role-to-instance-profile)
 {{% /notice %}}
 
 
-
-### 3.1.2. Create ec2 role:
+---
+### 2. Create ec2 role:
 
 ```bash
 vi ec2-role-document.json
@@ -67,7 +67,8 @@ aws iam create-role --role-name Ec2RoleExample --assume-role-policy-document fil
 **Result**
 ![alt text](image-1.png)
 
-### 3.1.3. Attach role policy and add role to instance profile
+---
+### 3. Attach role policy and add role to instance profile
 
 - Attach policy to role
 ```bash

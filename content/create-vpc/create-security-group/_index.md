@@ -6,14 +6,13 @@ weight = 2
 pre = "<b>2.2. </b>"
 +++
 
-## Create security group for ec2
 ### 1. Create security group
 ```bash
 aws ec2 create-security-group --group-name SG-EC2 --description "config inbound outbound to ec2" --vpc-id example
 ```
 
 Specifying:
-- --vpc-id: created in [result](/create-vpc/config-cloushell/#3-create-vpc-bash)
+- **--vpc-id**: created in [result](/create-vpc/config-cloushell/#3-create-vpc-bash)
 
 - Or if want to know can use this command ```aws ec2 describe-vpcs```
     ![alt text](image.png)
@@ -21,6 +20,7 @@ Specifying:
 **Result**
 ![alt text](image-2.png)
 
+---
 ### 2. Edit inbound rules
 
 - Create config file with group name in result above

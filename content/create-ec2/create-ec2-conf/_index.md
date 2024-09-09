@@ -6,7 +6,6 @@ weight = 3
 pre = "<b>3.3. </b>"
 +++
 
-### 3.3.1. Create Ec2 config:
 
 - Get subnet created in result [Section 2](/create-vpc/config-cloushell/#3-create-vpc-bash) or following this command:
   - Use ```aws ec2 describe-vpcs``` to get vpcId created
@@ -41,12 +40,12 @@ TagSpecifications:
 
 Specifying:
 
--   SubnetId: Created in section [VPC](#1-create-vpc) or above we got
--   IamInstanceProfile: Created in above section
--   ImageId and InstanceType can be reference
+-   **SubnetId**: Created in section [VPC](#1-create-vpc) or above we got
+-   **IamInstanceProfile**: Created in above section
+-   **ImageId and InstanceType can be reference**
     -   [Instance type](https://aws.amazon.com/ec2/instance-types/)
     -   [Image Id](https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#AMICatalog:)
--   SecurityGroupIds: created in [section](/create-vpc/create-security-group/#1-create-security-group)
+-   **SecurityGroupIds**: created in [section](/create-vpc/create-security-group/#1-create-security-group)
   
 Run instance ec2:
 

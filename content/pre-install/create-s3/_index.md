@@ -14,8 +14,8 @@ aws s3api create-bucket --bucket codepipeline-ap-southeast-1-nntl-example --crea
 
 Specifying:
 
--   --bucket: Name of bucket (ex: ```codepipeline-ap-southeast-1-nntl-example```)
--   --create-bucket-configuration: Location-create-bucket
+-   **--bucket**: Name of bucket (ex: ```codepipeline-ap-southeast-1-nntl-example```)
+-   **--create-bucket-configuration**: Location-create-bucket
 
 **Result**
 ![alt text](image-14.png)

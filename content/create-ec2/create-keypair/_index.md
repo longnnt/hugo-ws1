@@ -14,8 +14,8 @@ aws ec2 create-key-pair --key-name keypair-cli --key-format ppk --output text > 
 ```
 
 Specifying:
-- --key-format: ppk or pem (pem using for ssh)
-- --key-name: User defined
+- **--key-format**: ppk or pem (pem using for ssh)
+- **--key-name**: User defined
 
 **Result**
 ![alt text](image-27.png)
