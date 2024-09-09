@@ -134,6 +134,17 @@ Specifying:
 
 - Run this command ```aws codepipeline create-pipeline --cli-input-json file://codepipeline-conf.json```
 
+### When command above run wait 2-3 minutes in first time deploy
+
+
+**Result**
+
+![alt text](image-1.png)
+
+### Change content and update push code merge to develop branch
+
+**Result**
+![alt text](image-2.png)
 
 
 
