@@ -97,6 +97,14 @@ echo "Delete vpc successfully"
 ---
 ### 6. Delete s3 bucket
 
+- Empty s3 bucket first
+
+```bash
+aws s3 rm s3://codepipeline-ap-southeast-1-nntl-example --recursive
+```
+
+- Delete s3 bucket
+
 ```bash
 aws s3api delete-bucket --bucket codepipeline-ap-southeast-1-nntl-example --region ap-southeast-1
 ```
