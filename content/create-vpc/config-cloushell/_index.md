@@ -17,86 +17,102 @@ vi vpc-conf.yaml
 # config name, cidr block for vpc
 CidrBlock: "10.10.0.0/16"
 TagSpecifications:
-    - ResourceType: "vpc"
-      Tags:
-          - Key: "Name"
-            Value: "custom-vpc-for-ci-cd"
+  - ResourceType: "vpc"
+    Tags:
+      - Key: "Name"
+        Value: "custom-vpc-for-ci-cd"
 ```
+
+Specifying:
+
+   - **CidrBlock**: _cidr block for vpc_
+   - **TagSpecifications**: _create name for vpc
+   - **AvailabilityZoneId**: _availability zone_
 
 If you use more property or understand information, please use a reference document. [Cli VPC Document!](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html)
 
 ---
+
 ### 2. Create file config for public subnet
 
-#### 2.1. Find AzId in region
+1. Find **AzId** in region
 
-```bash
-aws ec2 describe-availability-zones
-```
+   ```bash
+   aws ec2 describe-availability-zones
+   ```
 
-**Result**
-```JSON
-{
-    "AvailabilityZones": [
-        {
-            "State": "available",
-            "OptInStatus": "opt-in-not-required",
-            "Messages": [],
-            "RegionName": "ap-southeast-1",
-            "RegionName": "ap-southeast-1",
-            "ZoneName": "ap-southeast-1a",
-            "ZoneId": "apse1-az2",
-            "GroupName": "ap-southeast-1",
-            "NetworkBorderGroup": "ap-southeast-1",
-            "ZoneType": "availability-zone"
-        },
-        {
-            "State": "available",
-            "OptInStatus": "opt-in-not-required",
-            "Messages": [],
-            "OptInStatus": "opt-in-not-required",
-            "Messages": [],
-            "RegionName": "ap-southeast-1",
-            "ZoneName": "ap-southeast-1b",
-            "ZoneId": "apse1-az1",
-            "GroupName": "ap-southeast-1",
-            "NetworkBorderGroup": "ap-southeast-1",
-            "ZoneType": "availability-zone"
-        },
-        {
-            "State": "available",
-            "OptInStatus": "opt-in-not-required",
-            "Messages": [],
-            "RegionName": "ap-southeast-1",
-            "ZoneName": "ap-southeast-1c",
-            "ZoneId": "apse1-az3",
-            "GroupName": "ap-southeast-1",
-            "NetworkBorderGroup": "ap-southeast-1",
-            "ZoneType": "availability-zone"
-        }
-    ]
-}
-```
-#### 2.2. Create subnet public config
+   **Result**
 
-```bash
-vi public-subnet-conf.yaml
-```
+   ```JSON
+   {
+       "AvailabilityZones": [
+           {
+               "State": "available",
+               "OptInStatus": "opt-in-not-required",
+               "Messages": [],
+               "RegionName": "ap-southeast-1",
+               "RegionName": "ap-southeast-1",
+               "ZoneName": "ap-southeast-1a",
+               "ZoneId": "apse1-az2",
+               "GroupName": "ap-southeast-1",
+               "NetworkBorderGroup": "ap-southeast-1",
+               "ZoneType": "availability-zone"
+           },
+           {
+               "State": "available",
+               "OptInStatus": "opt-in-not-required",
+               "Messages": [],
+               "OptInStatus": "opt-in-not-required",
+               "Messages": [],
+               "RegionName": "ap-southeast-1",
+               "ZoneName": "ap-southeast-1b",
+               "ZoneId": "apse1-az1",
+               "GroupName": "ap-southeast-1",
+               "NetworkBorderGroup": "ap-southeast-1",
+               "ZoneType": "availability-zone"
+           },
+           {
+               "State": "available",
+               "OptInStatus": "opt-in-not-required",
+               "Messages": [],
+               "RegionName": "ap-southeast-1",
+               "ZoneName": "ap-southeast-1c",
+               "ZoneId": "apse1-az3",
+               "GroupName": "ap-southeast-1",
+               "NetworkBorderGroup": "ap-southeast-1",
+               "ZoneType": "availability-zone"
+           }
+       ]
+   }
+   ```
 
-```yaml
-# config name, AZid and cidr block for subnet
-TagSpecifications:
-    - ResourceType: "subnet"
-      Tags:
-          - Key: "Name"
-            Value: "public-subnet"
-AvailabilityZoneId: "apse1-az2"
-CidrBlock: "10.10.0.1/16"
-```
+2. Create subnet public config
+
+   ```bash
+   vi public-subnet-conf.yaml
+   ```
+
+   ```yaml
+   # config name, AZid and cidr block for subnet
+       TagSpecifications:
+           - ResourceType: "subnet"
+           Tags:
+               - Key: "Name"
+                 Value: "public-subnet"
+       AvailabilityZoneId: "apse1-az2"
+       CidrBlock: "10.10.0.1/16"
+   ```
+
+   Specifying:
+
+   - **CidrBlock**: _cidr block for subnet_
+   - **TagSpecifications**: _create name for subnet_
+   - **AvailabilityZoneId**: _availability zone_
 
 If you use more property or understand information, please use a reference document. [Cli create subnet!](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-subnet.html)
 
 ---
+
 ### 3. Create vpc bash
 
 ```bash
@@ -144,7 +160,3 @@ bash create-vpc.sh
 
 **Result**
 ![alt text](image.png)
-
-
-
-

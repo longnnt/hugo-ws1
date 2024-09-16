@@ -9,4 +9,8 @@ pre = "<b>1. </b>"
 
 ### Chapter 1
 
-# Preinstall s3 and code connection
+# Preinstall s3, code connection and config to connect cloudshell
+
+#### 1.1. [Cloudshell](/pre-install/cloudshell/)
+#### 1.2. [S3 bucket](/pre-install/create-s3/)
+#### 1.3. [Code Connections](/pre-install/connect-github/)

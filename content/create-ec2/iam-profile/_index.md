@@ -14,16 +14,17 @@ vi ec2-policy.json
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": ["ec2:*"],
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["ec2:*"],
+      "Resource": "*"
+    }
+  ]
 }
 ```
+
 Run this command:
 
 ```bash
@@ -34,11 +35,11 @@ aws iam create-policy --policy-name Ec2Policy --policy-document file://ec2-polic
 ![alt text](image.png)
 
 {{% notice note %}}
-Use arn value for [section 3](#313-attach-role-policy-and-add-role-to-instance-profile)
+Use arn value for [section 3](#3-attach-role-policy-and-add-role-to-instance-profile)
 {{% /notice %}}
 
-
 ---
+
 ### 2. Create ec2 role:
 
 ```bash
@@ -47,19 +48,21 @@ vi ec2-role-document.json
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "ec2.amazonaws.com"
-            },
-            "Action": "sts:AssumeRole"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
 }
 ```
+
 Run this command:
+
 ```bash
 aws iam create-role --role-name Ec2RoleExample --assume-role-policy-document file://ec2-role-document.json
 ```
@@ -68,31 +71,31 @@ aws iam create-role --role-name Ec2RoleExample --assume-role-policy-document fil
 ![alt text](image-1.png)
 
 ---
+
 ### 3. Attach role policy and add role to instance profile
 
-- Attach policy to role
-```bash
-aws iam attach-role-policy --role-name Ec2RoleExample --policy-arn arn:aws:iam::xxxxxxxxxx:policy/Ec2Policy
-```
-- Create instance profile
-```bash
-aws iam create-instance-profile --instance-profile-name Ec2ProfileName
-```
-**Result**
-![alt text](image-2.png)
+1. Attach policy to role
+   ```bash
+   aws iam attach-role-policy --role-name Ec2RoleExample --policy-arn arn:aws:iam::xxxxxxxxxx:policy/Ec2Policy
+   ```
+2. Create instance profile
+   `bash
+ aws iam create-instance-profile --instance-profile-name Ec2ProfileName
+ `
+   **Result**
+   ![alt text](image-2.png)
 
+3. Add role to instance profile
 
-- Add role to instance profile
-```bash
-aws iam add-role-to-instance-profile --role-name Ec2RoleExample --instance-profile-name Ec2ProfileName
-```
+   ```bash
+   aws iam add-role-to-instance-profile --role-name Ec2RoleExample --instance-profile-name Ec2ProfileName
+   ```
 
-- Check instance profile created by role name
-```bash
-aws iam list-instance-profiles-for-role --role-name Ec2RoleExample
-```
+4. Check instance profile created by role name
 
-**Result**
-![alt text](image-3.png)
+   ```bash
+   aws iam list-instance-profiles-for-role --role-name Ec2RoleExample
+   ```
 
-
+   **Result**
+   ![alt text](image-3.png)

@@ -8,22 +8,18 @@ pre = "<b>3.2. </b>"
 
 ### Create keypair using for Ec2:
 
+1. Create keypair
 
 ```console
 aws ec2 create-key-pair --key-name keypair-cli --key-format ppk --output text > keypair-cli.ppk
 ```
 
 Specifying:
+
 - **--key-format**: ppk or pem (pem using for ssh)
 - **--key-name**: User defined
 
 **Result**
-![alt text](image-27.png)
-Download ```keypair-cli.ppk``` to local machine
-![alt text](image-28.png)
-Enter path and click download
-  ![alt text](image-29.png)
-
-
-
-
+![alt text](image-27.png) 2. Download `keypair-cli.ppk` to local machine
+![alt text](image-28.png) 3. Enter path and click download
+![alt text](image-29.png)

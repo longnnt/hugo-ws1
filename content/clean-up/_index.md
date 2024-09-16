@@ -6,18 +6,22 @@ weight = 12
 pre = "<b>5. </b>"
 +++
 
-- Find vpcId with cidr when created ```10.10.0.0/16```
-```aws ec2 describe-vpcs --filter "Name=cidr, Values=10.10.0.0/16" | grep -oP '"VpcId":\s*"\K[^"]+'```
-![alt text](image-2.png)
-- Find subnetId ```aws ec2 describe-subnets --filter "Name=vpc-id, Values=vpc-test"``` with vpcId above
+- Find vpcId with cidr when created `10.10.0.0/16`
+  `aws ec2 describe-vpcs --filter "Name=cidr, Values=10.10.0.0/16" | grep -oP '"VpcId":\s*"\K[^"]+'`
+  ![alt text](image-2.png)
+- Find subnetId `aws ec2 describe-subnets --filter "Name=vpc-id, Values=vpc-test"` with vpcId above
   ![alt text](image-1.png)
 - Find Ec2 instance id ```aws ec2 describe-instances --filter "Name=subnet-id, Values=subnet-test"
   ![alt text](image-3.png)
+
 ### 1. Terminate EC2
+
 ```bash
 aws ec2 terminate-instances --instance-ids i-test
 ```
+
 - Check instance terminated
+
 ```bash
 aws ec2 describe-instances --filter "Name=instance-state-name, Values=terminated"
 ```
@@ -30,7 +34,9 @@ Please wait ec2 instance terminated first and then go to next step
 {{% /notice %}}
 
 ---
+
 ### 2. Delete VPC
+
 ```bash
 vi delete-resource.sh
 ```
@@ -63,7 +69,7 @@ aws ec2 delete-route-table --route-table-id ${rtb_id}
 
 echo "Delete route and route table successfully"
 
-# GET subnet id 
+# GET subnet id
 subnet_id=$(aws ec2 describe-subnets --filter "Name=vpc-id, Values=${vpc_id}" | grep -oP '"SubnetId":\s*"\K[^"]+')
 
 # Delete subnet
@@ -77,42 +83,47 @@ aws ec2 delete-vpc --vpc-id ${vpc_id}
 echo "Delete vpc successfully"
 ```
 
-- Run this command ```bash delete-resource.sh```
+- Run this command to delete vpc `bash delete-resource.sh`
 
 ---
+
 ### 3. Delete codebuild
-```aws codebuild delete-project --name project-codebuild-example```
+
+- Run this command to delete codebuild `aws codebuild delete-project --name project-codebuild-example`
 
 ---
+
 ### 4. Delete codedeploy
-- Delete application name
-  - Use this ```aws deploy delete-application --application-name codedeploy-application```
-- Delete deployment group
-  - Use this ```aws deploy delete-deployment-group --application-name codedeploy-application --deployment-group-name codedeploy-group-name```
+
+1. Delete application name
+   - Use this `aws deploy delete-application --application-name codedeploy-application`
+2. Delete deployment group
+   - Use this `aws deploy delete-deployment-group --application-name codedeploy-application --deployment-group-name codedeploy-group-name`
 
 ---
+
 ### 5. Delete codepipeline
-```aws codepipeline delete-pipeline --name codepipeline-cli-example```
+
+- Run this command to delete codepipeline `aws codepipeline delete-pipeline --name codepipeline-cli-example`
 
 ---
+
 ### 6. Delete s3 bucket
 
-- Empty s3 bucket first
+1. Empty s3 bucket first
 
 ```bash
 aws s3 rm s3://codepipeline-ap-southeast-1-nntl-example --recursive
 ```
 
-- Delete s3 bucket
+3. Delete s3 bucket
 
 ```bash
 aws s3api delete-bucket --bucket codepipeline-ap-southeast-1-nntl-example --region ap-southeast-1
 ```
 
 ### 7. Delete github connection
-- List connections ```aws codeconnections list-connections```
+
+1. List connections `aws codeconnections list-connections`
   ![alt text](image-5.png)
-- Delete connections ```aws codeconnections delete-connection --connection-arn ```
-
-
-
+2. Delete connections `aws codeconnections delete-connection --connection-arn `

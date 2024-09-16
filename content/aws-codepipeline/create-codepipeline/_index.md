@@ -6,8 +6,8 @@ weight = 2
 pre = "<b>4.3. </b>"
 +++
 
-### 4.3.1. [Create role and policy for codepipeline](/aws-codepipeline/create-codepipeline/create-role/)
-### 4.3.2. [Create pipeline config](/aws-codepipeline/create-codepipeline/create-pipeline-conf/)
+#### 4.3.1. [Create role and policy for codepipeline](/aws-codepipeline/create-codepipeline/create-role/)
+#### 4.3.2. [Create pipeline config](/aws-codepipeline/create-codepipeline/create-pipeline-conf/)
 
 
 
