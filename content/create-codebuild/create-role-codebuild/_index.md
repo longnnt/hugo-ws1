@@ -3,12 +3,12 @@ title = 'Create service role for codebuild'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 2
-pre = "<b>4.1.1. </b>"
+pre = "<b>4.1. </b>"
 +++
 ---
-### 1. Create IAM Policy for codebuild:
--   Codebuild is just needed to get data from the source saved in s3 and save build output artifacts to s3. I just configured two actions for read and write.
--   Resource: ARN of s3 we created in previous ([section]([#1-codebuild](/pre-install/create-s3/#create-s3-bucket-using-cli)))
+1. Create IAM Policy for codebuild:
+   -   **Codebuild** is just needed to get data from the source saved in s3 and save build output artifacts to s3. I just configured two actions for read and write.
+   -   **Resource**: ARN of s3 we created in previous ([section]([#1-codebuild](/pre-install/create-s3/#create-s3-bucket-using-cli)))
 <!-- - Need to change this -->
 
 ```bash
@@ -39,7 +39,7 @@ vi codebuild-policy.json
 aws iam create-policy --policy-name CodeBuildPolicy --policy-document file://codebuild-policy.json
 ```
 ---
-### 2. Create IAM Role for codebuild
+2. Create IAM Role for codebuild
 ```bash
 vi codebuild-role-document.json
 ```
@@ -89,7 +89,7 @@ aws iam create-role --role-name CodeBuildRole --assume-role-policy-document file
 }
 ```
 ---
-### 3. Attach policy to role:
+3. Attach policy to role:
 
 ```console
 aws iam attach-role-policy --role-name CodeBuildRole --policy-arn arn:aws:iam::xxxxxxxxxx:policy/CodeBuildPolicy

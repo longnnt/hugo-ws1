@@ -2,8 +2,8 @@
 title = 'Clean up resource'
 date = 2024-09-07T19:01:58+07:00
 draft = false
-weight = 12
-pre = "<b>5. </b>"
+weight = 7
+pre = "<b>7. </b>"
 +++
 
 - Find vpcId with cidr when created `10.10.0.0/16`

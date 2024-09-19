@@ -3,10 +3,10 @@ title = 'Create AWS CodeBuild project'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 4
-pre = "<b>4.1.3. </b>"
+pre = "<b>4.3. </b>"
 +++
 
-### Create aws codebuild config:
+1. Create aws codebuild config:
 
 ```bash
 vi codebuild-conf.yaml
@@ -45,7 +45,7 @@ Specifying:
 -   If you use more property or understand information, please use a reference document. [Cli create project codebuld!](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/codebuild/create-project.html)
   
 ---
-Run this command to create codebuild project ```aws codebuild create-project --cli-input-yaml file://codebuild-conf.yaml```
+2. Run this command to create codebuild project ```aws codebuild create-project --cli-input-yaml file://codebuild-conf.yaml```
 
 **Result**
 ![alt text](image-30.png)

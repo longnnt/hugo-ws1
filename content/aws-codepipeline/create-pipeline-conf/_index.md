@@ -3,9 +3,9 @@ title = 'Create pipeline config'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 3
-pre = "<b>4.3.2. </b>"
+pre = "<b>6.2. </b>"
 +++
-
+1. Create codepipeline config:
 ```bash
 codepipeline-conf.json
 ```
@@ -133,14 +133,14 @@ Specifying:
     -   [Cli codepipeline](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/codepipeline/index.html?highlight=codepipeline)
 
 - Run this command ```aws codepipeline create-pipeline --cli-input-json file://codepipeline-conf.json```
-
+---
 ### When command above run wait 2-3 minutes in first time deploy
 
 
 **Result**
 
 ![alt text](image-1.png)
-
+---
 ### Change content and update push code merge to develop branch
 
 **Result**

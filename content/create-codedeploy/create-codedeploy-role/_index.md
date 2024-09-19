@@ -3,10 +3,10 @@ title = 'Create service role for codedeploy'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 2
-pre = "<b>4.2.2. </b>"
+pre = "<b>5.2. </b>"
 +++
 
-### Create role and policy for deployment group:
+1. Create policy using for codedeploy:
 
 ```bash 
 codedeploy-policy.json
@@ -28,7 +28,8 @@ codedeploy-policy.json
     ]
 }
 ```
-
+---
+2. Create role using for codedeploy:
 ```bash
 vi codedeploy-role-document.json
 ```
@@ -47,8 +48,8 @@ vi codedeploy-role-document.json
     ]
 }
 ```
-
-Create and attach role policy cli:
+---
+3. Create and attach role policy cli:
 
 ```console
 aws iam create-policy --policy-name CodeDeployPolicy --policy-document file://codedeploy-policy.json

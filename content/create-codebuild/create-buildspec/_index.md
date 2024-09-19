@@ -3,10 +3,10 @@ title = 'Create buildspec.yaml'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 3
-pre = "<b>4.1.2. </b>"
+pre = "<b>4.2. </b>"
 +++
 
-### Create buildspec.yaml:
+1. A buildspec is a collection of build commands and related settings, in YAML format, that CodeBuild uses to run a build. This workshop using buildspec with reactjs app config.
 
 ```bash
 vi buildspec.yaml
@@ -63,8 +63,8 @@ Specifying:
       - ![alt text](image.png)
       - Can reference in my code [github](https://github.com/longnnt/demo_ci-cd) or [reference appspec.yml use for Ec2/On-Premises](https://docs.aws.amazon.com/codedeploy/latest/userguide/application-revisions-appspec-file.html#add-appspec-file-server)
         
-
-- Save buildspec to s3 created in [section](/pre-install/create-s3/#create-s3-bucket-using-cli)
+---
+2. Save buildspec to s3 created in [section](/pre-install/create-s3/#create-s3-bucket-using-cli)
   - Run this command ```aws s3 cp /path/to/source s3://bucket-name/ --recursive```
   - /path/to/source created in cloudshell
   - bucket-name ```codepipeline-ap-southeast-1-nntl-example```

@@ -3,9 +3,9 @@ title = 'Create deployment group'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 4
-pre = "<b>4.2.3. </b>"
+pre = "<b>5.3. </b>"
 +++
-
+1. Create deployment group config:
 ```bash
 vi codedeploy-group.yaml
 ```

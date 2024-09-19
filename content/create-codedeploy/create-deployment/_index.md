@@ -3,12 +3,10 @@ title = 'Create deployment'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 5
-pre = "<b>4.2.4. </b>"
+pre = "<b>5.4. </b>"
 +++
 
-### Create deployment:
-
-
+1. Create code deployment config:
 ```bash
 vi codedeployment.yaml
 ```
@@ -22,9 +20,10 @@ revision:
         key: "my-build-artifact.zip"
         bundleType: "zip"
 ```
-
--   Define location using for deployment in s3 location and folder compressed zip exported in phase build
-
+Specifying:
+- **revision**: Define location using for deployment in s3 location and folder compressed zip exported in phase build
+- **applicationName**: Name of application created
+- **deploymentGroupName**: Name of deployment group created
 ```console
 aws deploy create-deployment --cli-input-yaml file://codedeployment.yaml
 ```

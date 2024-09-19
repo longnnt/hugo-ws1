@@ -3,10 +3,11 @@ title = 'Create role and policy for codepipeline'
 date = 2024-09-07T19:01:58+07:00
 draft = false
 weight = 2
-pre = "<b>4.3.1. </b>"
+pre = "<b>6.1. </b>"
 +++
 
--   Need to access role **EC2, codebuild, codedeploy, codestar connections**
+1. Create role using for codepipeline:
+   - Need to access role **EC2, codebuild, codedeploy, codestar connections**
 
 ```bash 
 vi codepipeline-policy.json
@@ -70,8 +71,8 @@ codepipeline-role-document.json
     ]
 }
 ```
-
-- Create and attach role policy cli:
+---
+2. Create and attach role policy cli:
 
 ```console
 aws iam create-policy --policy-name CodepipelinePolicy --policy-document file://codepipeline-policy.json
